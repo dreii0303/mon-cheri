@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Her Favorite Things</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* Starry background */
+body {
+  margin: 0;
+  background: black;
+  overflow-x: hidden; /* keep horizontal hidden */
+  overflow-y: auto;   /* allow vertical scroll */
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+#stars {
+  position: fixed;
+  inset: 0;   /* shorthand for top:0; left:0; right:0; bottom:0 */
+  z-index: -1; /* keeps stars behind everything */
+  pointer-events: none; /* prevent stars from blocking clicks/scroll */
+}
+
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .page-title {
+      text-align: center;
+      padding: 60px 20px 20px;
+      font-size: 3em;
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 0px 0px 15px rgba(255,255,255,0.9), 
+                   0px 0px 25px rgba(255,255,255,0.7);
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 80px auto;
+      max-width: 900px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .section img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
+    }
+
+    .section-text {
+      max-width: 500px;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #f0f0f0;
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 5px rgba(255,255,255,0.5),
+                     0 0 10px rgba(255,255,255,0.3);
+        opacity: 0.9;
+      }
+      50% {
+        text-shadow: 0 0 10px rgba(255,255,255,0.8),
+                     0 0 20px rgba(255,255,255,0.6);
+        opacity: 1;
+      }
+    }
+
+    .navbar {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .navbar a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      transition: text-shadow 0.3s ease, color 0.3s ease;
+      font-size: 1.1em;
+    }
+
+    .navbar a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px white, 0 0 15px white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Starry Background -->
+  <div id="stars"></div>
+
+  <!-- Title -->
+  <h1 class="page-title">Her Favorite Things ✨</h1>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="favorites.html">Favorites</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="letters.html">Letters</a>
+  </div>
+
+  <!-- Sections -->
+  <div class="section">
+    <img src="images/drei.jfif" alt="Favorite Thing 1">
+    <div class="section-text">
+      <h2>Drei</h2>
+      <p>Ako una, syempre ako na to e 💖.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <img src="images/carlos.jfif" alt="Favorite Thing 1">
+    <div class="section-text">
+      <h2>Carlos Sainz</h2>
+      <p>"Understandable, pogi e" -drei 💖.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <img src="images/matcha.jfif" alt="Favorite Thing 2">
+    <div class="section-text">
+      <h2>Matcha</h2>
+      <p>Taste of the green !✨.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <img src="images/chimken.jfif" alt="Favorite Thing 3">
+    <div class="section-text">
+      <h2>Chimken</h2>
+      <p>Crunchy, Juicy, and masarap, just like drei 💕.</p>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    // Create stars dynamically
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.animationDuration = (1 + Math.random() * 2) + 's';
+      starsContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
+	
